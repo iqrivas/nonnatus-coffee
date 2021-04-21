@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Nonnatus Coffee</title>
+</head>
+<body>
+    <header> <h1>Nonnatus Coffee</h1> </header>
+<main>
+  <div class="machine">
+    <span class="machine_title">Energy Maker 3000</span>
+    <button type="button" class="btn order_btn">Order your coffee</button>
+    
+    <div id="order_panel" class="panel order_panel">
+      <div class="order_text">
+        <p><b>Current Order</b></p>
+        <p>Size: Normal</p>
+        <p>Sugar Level: 2 </p>
+      </div> 
+      <button type="button" class="btn cancel_btn">Cancel</button>
+    </div>
+    <div id="size_panel" class="panel">
+      <p class="panel_text">Choose a size: </p>
+      <div class="size">
+        <button type="button" class="btn size_btn" value="normal">Normal</button>
+        <button type="button" class="btn size_btn" value="special">Special</button>
+      </div>
+    </div>
+    
+    <div id="sugar_panel" class="panel">
+      <p class="panel_text">Select sugar level: </p><br/>
+      <div class="sugar_lvl">
+        <button type="button" class="btn sugar_btn" value="decrease">-</button>
+        <div class="sugar_lvl">
+          <div class="sugar_pt"></div>
+          <div class="sugar_pt"></div>
+          <div class="sugar_pt sugar_pt--off"></div>
+          <div class="sugar_pt sugar_pt--off"></div>
+          <div class="sugar_pt sugar_pt--off"></div>
+        </div>
+        
+        <button type="button" class="btn sugar_btn" value="increase">+</button>
+      </div>
+    </div>  
+    <div id="prep_panel" class="panel panel_msg">
+      <p class="panel_text">Preparing</p>
+      <div class="sugar_lvl">
+          <div class="sugar_pt sugar_pt--off"></div>
+          <div class="sugar_pt sugar_pt--off"></div>
+          <div class="sugar_pt sugar_pt--off"></div>
+        </div>
+    </div>
+      
+    <div class="magic_zone">
+      <div class="source"></div>
+      <div class="source_tip"></div>
+      <div class="coffee"></div>
+      <div class="cup"></div>
+    </div>
+  </div>
+  
+</main>
+    
+</body>
+</html>

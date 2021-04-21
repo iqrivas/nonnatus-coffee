@@ -1,0 +1,167 @@
+:root {
+  --dark: #132c33;
+  --light: #d8e3e7;
+  --lightblue: #51c4d3;
+  --darkgreen: #126e82;
+  --coffee: #644117;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Roboto Mono", monospace;
+  background-color: lightgrey;
+}
+
+header {
+  margin: 1rem;
+  align-content: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.machine {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dark);
+  width: 30rem;
+  padding: 2.5rem;
+  border: 3px solid;
+  border-radius: 10px;
+}
+
+.machine_title {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.btn {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: white;
+  background-color: var(--lightblue);
+  box-shadow: 0 2px #999;
+}
+
+.btn:focus {
+  border: 1px solid;
+}
+
+.btn:active {
+  transform: translateY(2px);
+}
+
+.cancel_btn {
+  background-color: red;
+}
+
+.sugar_btn {
+  margin: 0 1rem;
+}
+
+.sugar_lvl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sugar_pt {
+  width: 1rem;
+  height: 1rem;
+  margin: 0.5rem;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.sugar_pt--off {
+  background-color: var(--darkgreen);
+  border: 1px solid white;
+}
+
+.sugar_lvl--on {
+  font-size: 2rem;
+  color: white;
+}
+
+.sugar_lvl--off {
+  font-size: 2rem;
+}
+
+.panel {
+  display: block;
+  border: 2px solid var(--dark);
+  background-color: var(--darkgreen);
+  text-align: center;
+  padding: 1rem;
+}
+
+.order_panel {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--dark);
+  border: none;
+  color: white;
+}
+
+.order_text p {
+  font-size: 1.4rem;
+}
+
+.panel_text {
+  font-size: 1.6rem;
+  color: white;
+}
+
+.magic_zone {
+  height: 15rem;
+  background-color: var(--light);
+  text-align: center;
+  color: white;
+  margin-top: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.source {
+  background-color: black;
+  height: 1.5rem;
+  width: 4rem;
+}
+
+.source_tip {
+  background-color: black;
+  height: 1rem;
+  width: 1.5rem;
+}
+
+.coffee {
+  background-color: var(--coffee);
+  height: 10rem;
+  width: 1rem;
+}
+
+.cup {
+  background-color: white;
+  border: 2px solid black;
+  height: 10rem;
+  width: 6rem;
+  margin-top: auto;
+}
+
