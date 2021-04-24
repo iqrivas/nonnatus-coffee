@@ -14,17 +14,23 @@
 <main>
   <div class="machine">
     <span class="machine_title">Energy Maker 3000</span>
-    <button type="button" class="btn order_btn">Order your coffee</button>
     
-    <div id="order_panel" class="panel order_panel">
-      <div class="order_text">
-        <p><b>Current Order</b></p>
-        <p>Size: Normal</p>
-        <p>Sugar Level: 2 </p>
-      </div> 
-      <button type="button" class="btn cancel_btn">Cancel</button>
+    <div id="order_panel" class="panel--order">
+      <button id="orderBtn" type="button" class="btn order_btn" onclick="startOrder()">Order your coffee</button>
+      <div id="currentOrder" class="order hidden">
+        <div class="order_text">
+          <p><b>Current Order</b></p>
+          <p>Size: </p>
+          <p>Sugar Level: </p>
+        </div> 
+        <button id="cancelBtn" type="button" class="btn cancel_btn" onclick="cancelOrder()">Cancel</button>
+      </div>
     </div>
-    <div id="size_panel" class="panel">
+
+    <div id="main_panel" class="panel">
+      <p class="panel_text">Welcome to Nonnatus Coffee</p>
+    </div>
+    <div id="size_panel" class="panel hidden">
       <p class="panel_text">Choose a size: </p>
       <div class="size">
         <button type="button" class="btn size_btn" value="normal">Normal</button>
@@ -32,7 +38,7 @@
       </div>
     </div>
     
-    <div id="sugar_panel" class="panel">
+    <div id="sugar_panel" class="panel hidden">
       <p class="panel_text">Select sugar level: </p><br/>
       <div class="sugar_lvl">
         <button type="button" class="btn sugar_btn" value="decrease">-</button>
@@ -47,7 +53,7 @@
         <button type="button" class="btn sugar_btn" value="increase">+</button>
       </div>
     </div>  
-    <div id="prep_panel" class="panel panel_msg">
+    <div id="prep_panel" class="panel panel_msg hidden">
       <p class="panel_text">Preparing</p>
       <div class="sugar_lvl">
           <div class="sugar_pt sugar_pt--off"></div>
@@ -59,12 +65,12 @@
     <div class="magic_zone">
       <div class="source"></div>
       <div class="source_tip"></div>
-      <div class="coffee"></div>
-      <div class="cup"></div>
+      <div class="coffee hidden"></div>
+      <div class="cup hidden"></div>
     </div>
   </div>
   
 </main>
-    
+<script src="index.js"></script>    
 </body>
 </html>
