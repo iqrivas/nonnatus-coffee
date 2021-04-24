@@ -153,6 +153,7 @@ main {
 
 .magic_zone {
   height: 15rem;
+  width: 18rem;
   background-color: var(--light);
   text-align: center;
   color: white;
@@ -161,6 +162,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: center;
 }
 
 .source {
