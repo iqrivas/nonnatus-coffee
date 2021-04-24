@@ -19,9 +19,9 @@
       <button id="orderBtn" type="button" class="btn order_btn" onclick="startOrder()">Order your coffee</button>
       <div id="currentOrder" class="order hidden">
         <div class="order_text">
-          <p><b>Current Order</b></p>
+          <p><b><u>Current Order</u></b></p>
           <p id="orderSize">Size: </p>
-          <p id="orderSugar">Sugar Level: </p>
+          <p id="orderSugar">Sugar: </p>
         </div> 
         <button id="cancelBtn" type="button" class="btn cancel_btn" onclick="cancelOrder()">Cancel</button>
       </div>
@@ -30,6 +30,7 @@
     <div id="main_panel" class="panel">
       <p class="panel_text">Welcome to Nonnatus Coffee</p>
     </div>
+
     <div id="size_panel" class="panel hidden">
       <p class="panel_text">Choose a size: </p>
       <div class="size">
@@ -43,23 +44,27 @@
       <div class="sugar_lvl">
         <button type="button" class="btn sugar_btn" value="decrease">-</button>
         <div class="sugar_lvl">
-          <div class="sugar_pt"></div>
-          <div class="sugar_pt"></div>
-          <div class="sugar_pt sugar_pt--off"></div>
-          <div class="sugar_pt sugar_pt--off"></div>
-          <div class="sugar_pt sugar_pt--off"></div>
+          <div id="lvl-1" class="sugar_pt sugar_pt--off"></div>
+          <div id="lvl-2" class="sugar_pt sugar_pt--off"></div>
+          <div id="lvl-3" class="sugar_pt sugar_pt--off"></div>
+          <div id="lvl-4" class="sugar_pt sugar_pt--off"></div>
+          <div id="lvl-5" class="sugar_pt sugar_pt--off"></div>
         </div>
-        
+                
         <button type="button" class="btn sugar_btn" value="increase">+</button>
       </div>
-    </div>  
+      <div id="sugar">
+        <button id="continueBtn" type="button" class="btn continue_btn" onclick="startPrep()">Start Preparing >></button>
+      </div>
+    </div>
+
     <div id="prep_panel" class="panel panel_msg hidden">
       <p class="panel_text">Preparing</p>
       <div class="sugar_lvl">
-          <div class="sugar_pt sugar_pt--off"></div>
-          <div class="sugar_pt sugar_pt--off"></div>
-          <div class="sugar_pt sugar_pt--off"></div>
-        </div>
+        <div class="sugar_pt sugar_pt--off"></div>
+        <div class="sugar_pt sugar_pt--off"></div>
+        <div class="sugar_pt sugar_pt--off"></div>
+      </div>
     </div>
       
     <div class="magic_zone">
