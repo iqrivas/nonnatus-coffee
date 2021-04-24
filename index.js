@@ -68,3 +68,47 @@ sugarBtns.forEach(element => {
         
     });
 })
+
+function startPrep() {
+    cancelBtn.setAttribute('disabled', 'disabled');
+    cancelBtn.classList.remove('cancel_btn');
+    cancelBtn.classList.add('cancel_btn--disabled');
+    sugarPanel.classList.add('hidden');
+    prepPanel.classList.remove('hidden');
+    setTimeout (()=> {
+        document.getElementById('prep-1').classList.remove('sugar_pt--off');
+    }, 1000)
+    setTimeout (()=> {
+        document.getElementById('prep-2').classList.remove('sugar_pt--off');
+    }, 2000)
+    setTimeout (()=> {
+        document.getElementById('prep-3').classList.remove('sugar_pt--off');
+    }, 3000)
+    setTimeout (()=> {
+        prepPanel.innerHTML += `
+        <p class="panel_text">Serving</p>
+        <div class="levels">
+          <div id="serv-1" class="sugar_pt sugar_pt--off"></div>
+          <div id="serv-2" class="sugar_pt sugar_pt--off"></div>
+          <div id="serv-3" class="sugar_pt sugar_pt--off"></div>
+        </div>`
+    }, 4000);
+    setTimeout (()=> {
+        document.getElementById('serv-1').classList.remove('sugar_pt--off');
+    }, 6000)
+    setTimeout (()=> {
+        document.getElementById('serv-2').classList.remove('sugar_pt--off');
+    }, 8000)
+    setTimeout (()=> {
+        document.getElementById('serv-3').classList.remove('sugar_pt--off');
+    }, 10000)
+    setTimeout (()=> {
+        prepPanel.innerHTML = `
+        <p class="panel_text">Your coffee is ready. ☕ </p>
+        <p class="panel_text">Enjoy! </p>
+        <p class="panel_text">Have a nice day </p>
+        `
+    }, 12000);
+    
+
+}
