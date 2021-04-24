@@ -132,6 +132,7 @@ main {
 
 .order_text p {
   font-size: 1.4rem;
+  text-align: left;
 }
 
 .panel_text {
@@ -144,7 +145,7 @@ main {
   background-color: var(--light);
   text-align: center;
   color: white;
-  margin-top: 1rem;
+  margin-top: auto;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
