@@ -170,6 +170,7 @@ main {
   background-color: black;
   height: 1.5rem;
   width: 4rem;
+  border-radius: 0px 0px 10px 10px;
 }
 
 .source_tip {
@@ -182,16 +183,29 @@ main {
   background-color: var(--coffee);
   height: 4.5rem;
   width: 1rem;
+  animation: startCoffee 2s ease-out forwards;
 }
 
 .cup {
-  border: 2px solid black;
+  box-shadow:  rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   height: 8rem;
   width: 6rem;
-  background: white;
+  background: var(--light);
   margin-top: auto;
   animation: moveToRight 2s ease-out forwards;
+  border-radius: 5px 5px 20px 20px;
 }
+
+.cup::after {
+  content: "";
+  border-right: 10px solid rgba(60, 64, 67, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  width: 25px;
+  height: 35px;
+  transform: translateX(11px) translateY(10px);
+}
+
 
 .cup_fill--Small {
   animation: fillSmall 4s ease-out forwards;
@@ -212,45 +226,48 @@ main {
 
 @keyframes startCoffee {
   0% {
-    background: linear-gradient( to bottom, var(--coffee) 1%, white 99%);
+    background: linear-gradient( to bottom, var(--coffee) 1%, var(--light) 99%);
+  }
+  80% {
+    background: linear-gradient( to bottom, var(--coffee) 99%, var(--light) 1%);
   }
   100% {
-    background: linear-gradient( to bottom, var(--coffee) 50%, white 50%);
+    background: linear-gradient( to bottom, var(--coffee) 1%, var(--light) 99%);
   }  
 }
 
 @keyframes fillSmall {
   0% {
-    background: white;
+    background: var(--light);
   }
   25% {
-    background: linear-gradient( to top, var(--lightcoffee) 12%, white 12% 88%);
+    background: linear-gradient( to top, var(--coffee) 12%, var(--light) 12% 88%);
   }
   50% {
-    background: linear-gradient( to top, var(--lightcoffee) 25%, white 25% 75%);
+    background: linear-gradient( to top, var(--coffee) 25%, var(--light) 25% 75%);
   }
   75% {
-    background: linear-gradient( to top, var(--lightcoffee) 37%, white 37% 63%);
+    background: linear-gradient( to top, var(--coffee) 37%, var(--light) 37% 63%);
   }
   100% {
-    background: linear-gradient( to top, var(--lightcoffee) 50%, white 50%);
+    background: linear-gradient( to top, var(--coffee) 50%, var(--light) 50%);
   }
 }
 
 @keyframes fillLarge {
-  0% {background: white;
+  0% {background: var(--light);
   }
   25% {
-    background: linear-gradient( to top, var(--lightcoffee) 18%, white 18% 82%);
+    background: linear-gradient( to top, var(--coffee) 18%, var(--light) 18% 82%);
   }
   50% {
-    background: linear-gradient( to top, var(--lightcoffee) 37%, white 37% 63%);
+    background: linear-gradient( to top, var(--coffee) 37%, var(--light) 37% 63%);
   }
   75% {
-    background: linear-gradient( to top, var(--lightcoffee) 55%, white 55% 45%);
+    background: linear-gradient( to top, var(--coffee) 55%, var(--light) 55% 45%);
   }
   100% {
-    background: linear-gradient( to top, var(--lightcoffee) 75%, white 25%);
+    background: linear-gradient( to top, var(--coffee) 75%, var(--light) 25%);
   }
 }
 
