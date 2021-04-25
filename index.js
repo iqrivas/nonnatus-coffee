@@ -7,13 +7,14 @@ class Order {
 
 let newOrder = new Order('', 0);
 
-let mainPanel = document.getElementById('main_panel');
-let orderPanel = document.getElementById('currentOrder');
-let sizePanel = document.getElementById('size_panel');
-let sugarPanel = document.getElementById('sugar_panel');
-let prepPanel = document.getElementById('prep_panel');
-let orderBtn = document.getElementById('orderBtn');
-let cancelBtn = document.getElementById('cancelBtn');
+const mainPanel = document.getElementById('main_panel');
+const orderPanel = document.getElementById('currentOrder');
+const sizePanel = document.getElementById('size_panel');
+const sugarPanel = document.getElementById('sugar_panel');
+const prepPanel = document.getElementById('prep_panel');
+const orderBtn = document.getElementById('orderBtn');
+const cancelBtn = document.getElementById('cancelBtn');
+const newOrderBtn = document.getElementById('newOrderBtn');
 
 function startOrder () {
     orderBtn.classList.add('hidden');
@@ -23,11 +24,25 @@ function startOrder () {
 }
 
 function cancelOrder () {
+    cup.classList.add('hidden');
+    cup.classList.remove('cup_fill--Large', 'cup_fill--Small' );
     orderBtn.classList.remove('hidden');
     mainPanel.classList.remove('hidden');
     orderPanel.classList.add('hidden');
     sizePanel.classList.add('hidden');
     sugarPanel.classList.add('hidden');
+    prepPanel.classList.add('hidden');
+    prepPanel.innerHTML = `
+    <p class="panel_text">Preparing</p>
+    <div class="levels">
+        <div id="prep-1" class="sugar_pt sugar_pt--off"></div>
+        <div id="prep-2" class="sugar_pt sugar_pt--off"></div>
+        <div id="prep-3" class="sugar_pt sugar_pt--off"></div>
+    </div>`;
+    cancelBtn.classList.remove('hidden', 'cancel_btn--disabled');
+    cancelBtn.classList.add('cancel_btn');
+    cancelBtn.disabled = false;
+    newOrderBtn.classList.add('hidden');
     newOrder.size = '';
     newOrder.sugar = 0;
     orderSize.innerHTML = `Size: `;
@@ -39,8 +54,8 @@ function cancelOrder () {
     document.getElementById(`lvl-5`).classList.add('sugar_pt--off');
 }
 
-let sizeBtns = document.querySelectorAll('.size_btn');
-let orderSize = document.getElementById('orderSize');
+const sizeBtns = document.querySelectorAll('.size_btn');
+const orderSize = document.getElementById('orderSize');
 sizeBtns.forEach(element => {
     element.addEventListener('click', (ev) => {
         newOrder.size = ev.target.value;
@@ -51,8 +66,8 @@ sizeBtns.forEach(element => {
     });
 })
 
-let sugarBtns = document.querySelectorAll('.sugar_btn');
-let orderSugar = document.getElementById('orderSugar');
+const sugarBtns = document.querySelectorAll('.sugar_btn');
+const orderSugar = document.getElementById('orderSugar');
 sugarBtns.forEach(element => {
     element.addEventListener('click', (ev) => {
         if (ev.target.value == 'increase' && newOrder.sugar < 5) {
@@ -85,6 +100,7 @@ function startPrep() {
         document.getElementById('prep-3').classList.remove('sugar_pt--off');
     }, 3000)
     setTimeout (()=> {
+        servingCoffee();
         prepPanel.innerHTML += `
         <p class="panel_text">Serving</p>
         <div class="levels">
@@ -109,6 +125,25 @@ function startPrep() {
         <p class="panel_text">Have a nice day </p>
         `
     }, 12000);
-    
+    setTimeout (()=> {
+        cancelBtn.classList.add('hidden');
+        newOrderBtn.classList.remove('hidden');
+    }, 12000)
+
+}
+
+const cup = document.getElementById('cup');
+const coffee = document.getElementById('coffee');
+
+function servingCoffee () {
+    cup.classList.remove('hidden');  
+    setTimeout (()=> {
+        coffee.classList.remove('hidden');
+        let cupFillSize = `cup_fill--${newOrder.size}`;
+        cup.classList.add(cupFillSize); 
+    }, 2000)
+    setTimeout (()=> {
+        coffee.classList.add('hidden');
+    }, 6000)
 
 }
