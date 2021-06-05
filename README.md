@@ -47,3 +47,9 @@ Go to the project directory
 ```
 
 *No need to install dependencies. Just open the index.html file in your browser.
+
+## Project Developed as part of Platzi Master:
+
+- Created by Denisse Rivas [Github](https://github.com/iqrivas) | [LinkedIn](https://www.linkedin.com/in/iqrivas/) 
+- Assigned by: Platzi Master Coach - Ana Belisa Martinez
+
